@@ -1,0 +1,11 @@
+# Copyright (c) JAAK-IT SAPI DE CV - All Rights Reserved
+# Unauthorized copying of this file, via any medium is strictly prohibited
+# Proprietary and confidential
+# Written by Javier Moya <javier.moya@jaak-it.com>, 2021.
+# Support <support@jaak-it.com>
+
+extends:
+  - "@commitlint/config-conventional"
+
+rules:
+  body-max-line-length: [1, 'always', 200]
