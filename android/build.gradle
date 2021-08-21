@@ -43,8 +43,15 @@ android {
 
 repositories {
     google()
-    jcenter()
     mavenCentral()
+    flatDir {
+        dirs 'libs'
+    }
+}
+dependencies {
+    compile(name:'finger_capture', ext:'aar')
+    compile(name:'finger_analysis', ext:'aar')
+
 }
 
 
@@ -52,9 +59,11 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':capacitor-android')
     implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
     testImplementation "junit:junit:$junitVersion"
     androidTestImplementation "androidx.test.ext:junit:$androidxJunitVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$androidxEspressoCoreVersion"
-    implementation files('libs/finger_acequisition.aar')
+    implementation fileTree(include: ['*.aar'], dir: 'libs')
 
 }
