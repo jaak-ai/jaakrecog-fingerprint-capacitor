@@ -12,7 +12,6 @@ import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.ActivityCallback;
 import com.getcapacitor.annotation.CapacitorPlugin;
-
 @CapacitorPlugin(name = "FingerPrint")
 public class FingerPrintPlugin extends Plugin {
 
