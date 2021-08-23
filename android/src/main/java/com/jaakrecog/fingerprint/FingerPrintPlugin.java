@@ -1,6 +1,7 @@
 package com.jaakrecog.fingerprint;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.util.Log;
 
 import androidx.activity.result.ActivityResult;
@@ -21,9 +22,14 @@ public class FingerPrintPlugin extends Plugin {
     @PluginMethod
     public void callFingerAcequisition(PluginCall call) {
         try {
+            String jwToken = call.getString("jwtoken");
             Intent callIntentActivity = new Intent(getActivity(),
                     Class.forName("com.jaakit.fingeracequisition.FingerActivity"));
+            callIntentActivity.putExtra("jwtoken",jwToken);
             startActivityForResult(call,callIntentActivity,"finger_acequisition");
+
+
+
         }catch (Exception ex){
             Log.e("Exception",ex.getMessage());
         }
@@ -34,9 +40,11 @@ public class FingerPrintPlugin extends Plugin {
         if (call == null) {
             return;
         }
+        Uri imgURILeft = Uri.parse(result.getData().getStringExtra("fingerLeftBytes"));
+        Uri imgURIRigth = Uri.parse(result.getData().getStringExtra("fingerRigthBytes"));
         JSObject ret = new JSObject();
-        ret.put("fingerLeft", result.getData().getStringExtra("fingerLeft"));
-        ret.put("fingerRigth", result.getData().getStringExtra("fingerRigth"));
+        ret.put("fingerLeft", imgURILeft);
+        ret.put("fingerRigth", imgURIRigth);
         call.resolve(ret);
 
     }
