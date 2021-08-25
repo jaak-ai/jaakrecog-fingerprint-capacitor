@@ -7,7 +7,7 @@ buildscript {
         google()
         jcenter()
         mavenLocal()
-        mavenCentral artifactUrls:["/home/hugo/.m2/repository/.m2/repository/"]
+        mavenCentral artifactUrls:["/home/hugo/.m2/repository"]
 
         maven {
             url = uri("https://maven.springframework.org/release")
@@ -65,7 +65,7 @@ dependencies {
     implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
-    implementation 'jaakrego.jaakit.fingerprint:finger-capture:1.0.0'
-    implementation 'jaakrego.jaakit.fingerprint:finger-amalysis:1.0.0'
+    implementation 'jaakrecog.jaakit.fingerprint:finger-capture:1.0.0'
+    implementation 'jaakrecog.jaakit.fingerprint:finger-analysis:1.0.0'
 
 }
