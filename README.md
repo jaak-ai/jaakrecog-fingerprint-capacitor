@@ -13,17 +13,17 @@ npx cap sync
 
 <docgen-index>
 
-* [`echo(...)`](#echo)
+* [`callFingerAcequisition(...)`](#callfingeracequisition)
 
 </docgen-index>
 
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
-### echo(...)
+### callFingerAcequisition(...)
 
 ```typescript
-echo(options: { value: string; }) => any
+callFingerAcequisition(options: { value: string; }) => any
 ```
 
 | Param         | Type                            |

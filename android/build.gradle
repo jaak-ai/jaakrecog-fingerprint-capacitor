@@ -1,13 +1,18 @@
 ext {
-    junitVersion = project.hasProperty('junitVersion') ? rootProject.ext.junitVersion : '4.13.1'
     androidxAppCompatVersion = project.hasProperty('androidxAppCompatVersion') ? rootProject.ext.androidxAppCompatVersion : '1.2.0'
-    androidxJunitVersion = project.hasProperty('androidxJunitVersion') ? rootProject.ext.androidxJunitVersion : '1.1.2'
-    androidxEspressoCoreVersion = project.hasProperty('androidxEspressoCoreVersion') ? rootProject.ext.androidxEspressoCoreVersion : '3.3.0'
 }
 
 buildscript {
     repositories {
         google()
+        jcenter()
+        mavenLocal()
+        mavenCentral artifactUrls:["/home/hugo/.m2/repository/.m2/repository/"]
+
+        maven {
+            url = uri("https://maven.springframework.org/release")
+        }
+
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:4.2.1'
@@ -23,7 +28,7 @@ android {
         targetSdkVersion project.hasProperty('targetSdkVersion') ? rootProject.ext.targetSdkVersion : 30
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
     }
     buildTypes {
         release {
@@ -39,19 +44,19 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 }
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        mavenLocal()
+        mavenCentral artifactUrls:["/home/hugo/.m2/repository/.m2/repository/"]
 
-repositories {
-    google()
-    mavenCentral()
-    flatDir {
-        dirs 'libs'
-    }
+        maven {
+            url = uri("https://maven.springframework.org/release")
+        }    }
 }
-dependencies {
-    compile(name:'finger_capture', ext:'aar')
-    compile(name:'finger_analysis', ext:'aar')
 
-}
+
 
 
 dependencies {
@@ -60,9 +65,7 @@ dependencies {
     implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
-    testImplementation "junit:junit:$junitVersion"
-    androidTestImplementation "androidx.test.ext:junit:$androidxJunitVersion"
-    androidTestImplementation "androidx.test.espresso:espresso-core:$androidxEspressoCoreVersion"
-    implementation files('libs/finger_analysis.aar')
-    implementation files('libs/finger_capture.aar')
+    implementation 'jaakrego.jaakit.fingerprint:finger-capture:1.0.0'
+    implementation 'jaakrego.jaakit.fingerprint:finger-amalysis:1.0.0'
+
 }
