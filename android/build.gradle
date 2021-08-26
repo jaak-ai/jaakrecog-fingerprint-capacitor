@@ -20,6 +20,7 @@ buildscript {
 }
 
 apply plugin: 'com.android.library'
+apply plugin: 'com.google.cloud.artifactregistry.gradle-plugin'
 
 android {
     compileSdkVersion project.hasProperty('compileSdkVersion') ? rootProject.ext.compileSdkVersion : 30
@@ -48,12 +49,14 @@ allprojects {
     repositories {
         google()
         jcenter()
-        mavenLocal()
-        mavenCentral artifactUrls:["/home/hugo/.m2/repository/.m2/repository/"]
-
         maven {
+            url "artifactregistry://us-central1-maven.pkg.dev/jaakrecog-1to1-similarity/jaakrecog-maven"
+        }
+
+        mavenrepository {
             url = uri("https://maven.springframework.org/release")
-        }    }
+        }
+    }
 }
 
 
@@ -67,5 +70,6 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
     implementation 'jaakrecog.jaakit.fingerprint:finger-capture:1.0.0'
     implementation 'jaakrecog.jaakit.fingerprint:finger-analysis:1.0.0'
+    compile group: 'com.jaakit.fingeracequisition', name: 'finger-capture', version: '1.0.0'
 
 }
