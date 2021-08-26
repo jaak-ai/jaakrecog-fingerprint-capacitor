@@ -5,22 +5,20 @@ ext {
 buildscript {
     repositories {
         google()
-        jcenter()
-        mavenLocal()
-        mavenCentral artifactUrls:["/home/hugo/.m2/repository"]
-
         maven {
-            url = uri("https://maven.springframework.org/release")
+            url "https://plugins.gradle.org/m2/"
         }
 
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:4.2.1'
+        classpath 'gradle.plugin.com.google.cloud.artifactregistry:artifactregistry-gradle-plugin:2.1.2'
     }
 }
 
+
 apply plugin: 'com.android.library'
-apply plugin: 'com.google.cloud.artifactregistry.gradle-plugin'
+apply plugin: "com.google.cloud.artifactregistry.gradle-plugin"
 
 android {
     compileSdkVersion project.hasProperty('compileSdkVersion') ? rootProject.ext.compileSdkVersion : 30
@@ -48,14 +46,10 @@ android {
 allprojects {
     repositories {
         google()
-        jcenter()
         maven {
             url "artifactregistry://us-central1-maven.pkg.dev/jaakrecog-1to1-similarity/jaakrecog-maven"
         }
 
-        mavenrepository {
-            url = uri("https://maven.springframework.org/release")
-        }
     }
 }
 
