@@ -1,3 +1,3 @@
 export interface FingerPrintPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>;
+  callFingerAcequisition(options: { value: string }): Promise<{ value: string }>;
 }
