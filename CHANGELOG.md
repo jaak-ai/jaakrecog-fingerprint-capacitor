@@ -1,3 +1,10 @@
+# [1.0.0-dev.3](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.2...v1.0.0-dev.3) (2021-08-30)
+
+
+### Features
+
+* add pinst library for public npm ([0e56b3a](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/commit/0e56b3af65211b16436cda062739dcf93878c7a1))
+
 # [1.0.0-dev.2](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.1...v1.0.0-dev.2) (2021-08-27)
 
 
