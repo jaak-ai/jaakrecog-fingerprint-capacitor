@@ -1,3 +1,10 @@
+# [1.0.0-dev.6](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.5...v1.0.0-dev.6) (2021-09-06)
+
+
+### Features
+
+* add indication to npm ([09fb8fd](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/commit/09fb8fd307200fe0d57e5f1f8866eab320a440ca))
+
 # [1.0.0-dev.5](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.4...v1.0.0-dev.5) (2021-09-06)
 
 
