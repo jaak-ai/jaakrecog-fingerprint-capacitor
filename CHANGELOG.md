@@ -1,3 +1,10 @@
+# [1.0.0-dev.5](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.4...v1.0.0-dev.5) (2021-09-06)
+
+
+### Features
+
+* definitions change ([a8ea3fb](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/commit/a8ea3fb46781d1f24786e5763644c098d9e7ca45))
+
 # [1.0.0-dev.4](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.3...v1.0.0-dev.4) (2021-09-06)
 
 
