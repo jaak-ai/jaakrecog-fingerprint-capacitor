@@ -1,3 +1,10 @@
+# [1.0.0-dev.4](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.3...v1.0.0-dev.4) (2021-09-06)
+
+
+### Bug Fixes
+
+* package ([8c1fb4e](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/commit/8c1fb4e8254255861c17f24cba659b22a5531a09))
+
 # [1.0.0-dev.3](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.2...v1.0.0-dev.3) (2021-08-30)
 
 
