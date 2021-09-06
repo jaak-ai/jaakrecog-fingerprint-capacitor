@@ -1,5 +1,6 @@
 package com.jaakrecog.fingerprint;
 
+import android.content.ContentResolver;
 import android.content.Intent;
 import android.net.Uri;
 import android.util.Log;
@@ -12,25 +13,42 @@ import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.ActivityCallback;
 import com.getcapacitor.annotation.CapacitorPlugin;
+import com.jaakrecog.fingerprint.credentials.ValidateCredentialsImpl;
+import com.jaakrecog.fingerprint.utils.Utils;
+
+import org.json.JSONObject;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+
 @CapacitorPlugin(name = "FingerPrint")
 public class FingerPrintPlugin extends Plugin {
 
     private FingerPrint implementation = new FingerPrint();
-
-
-    @PluginMethod
+    private ValidateCredentialsImpl validateCredentials;
+     @PluginMethod
     public void callFingerAcequisition(PluginCall call) {
         try {
-            String jwToken = call.getString("jwtoken");
-            Intent callIntentActivity = new Intent(getActivity(),
+            String apiKey = call.getString("value");
+             validateCredentials= new ValidateCredentialsImpl(this.getContext());
+            String jwToken=validateCredentials.validateCredentials(apiKey);
+
+            Intent callIntentActivity =
+                    new Intent(getActivity(),
                     Class.forName("com.jaakit.fingeracequisition.FingerActivity"));
             callIntentActivity.putExtra("jwtoken",jwToken);
-            startActivityForResult(call,callIntentActivity,"finger_acequisition");
-
+            startActivityForResult(call,callIntentActivity,"captureFingersResult");
 
 
         }catch (Exception ex){
             Log.e("Exception",ex.getMessage());
+            JSObject ret = new JSObject();
+            ret.put("error", ex.getMessage());
+            call.resolve(ret);
+
         }
      }
 
@@ -41,12 +59,29 @@ public class FingerPrintPlugin extends Plugin {
         }
         Uri imgURILeft = Uri.parse(result.getData().getStringExtra("fingerLeftBytes"));
         Uri imgURIRigth = Uri.parse(result.getData().getStringExtra("fingerRigthBytes"));
-        JSObject ret = new JSObject();
-        ret.put("fingerLeft", imgURILeft);
-        ret.put("fingerRigth", imgURIRigth);
-        call.resolve(ret);
+
+        try{
+
+            ContentResolver cr = getContext().getContentResolver();
+            InputStream inputStreamLeftFinger = cr.openInputStream(imgURILeft);
+            Utils.copyInputStreamToFile(inputStreamLeftFinger,new File("dedo_izquierdo.wsq"));
+            InputStream inputStreamRigthFinger = cr.openInputStream(imgURIRigth);
+            Utils.copyInputStreamToFile(inputStreamRigthFinger,new File("dedo_derecho.wsq"));
+            JSObject ret = new JSObject();
+            ret.put("fingerRigth", imgURIRigth);
+            ret.put("fingerLeft", imgURILeft);
+            call.resolve(ret);
+
+        }catch (FileNotFoundException fileNotFoundException){
+            fileNotFoundException.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
 
     }
+
 }
 
 

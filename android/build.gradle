@@ -1,3 +1,4 @@
+
 ext {
     androidxAppCompatVersion = project.hasProperty('androidxAppCompatVersion') ? rootProject.ext.androidxAppCompatVersion : '1.2.0'
 }
@@ -5,10 +6,10 @@ ext {
 buildscript {
     repositories {
         google()
+        jcenter()
         maven {
             url "https://plugins.gradle.org/m2/"
         }
-
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:4.2.1'
@@ -46,6 +47,7 @@ android {
 allprojects {
     repositories {
         google()
+        jcenter()
         maven {
             url "artifactregistry://us-central1-maven.pkg.dev/jaakrecog-1to1-similarity/jaakrecog-maven"
         }
@@ -62,8 +64,12 @@ dependencies {
     implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
-    implementation 'jaakrecog.jaakit.fingerprint:finger-capture:1.0.0'
-    implementation 'jaakrecog.jaakit.fingerprint:finger-analysis:1.0.0'
-    compile group: 'com.jaakit.fingeracequisition', name: 'finger-capture', version: '1.0.0'
+    implementation "androidx.camera:camera-view:1.0.0-alpha28"
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.1'
+    implementation group: 'com.jaakit.fingeracequisition', name: 'finger-capture', version: '1.0.5'
+    implementation group: 'com.jaakrecog.fingerprint', name: 'finger-analysis', version: '1.0.4'
+
 
 }
