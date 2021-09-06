@@ -23,12 +23,12 @@ npx cap sync
 ### callFingerAcequisition(...)
 
 ```typescript
-callFingerAcequisition(options: { value: string; }) => any
+callFingerAcequisition(accessToken: string) => any
 ```
 
-| Param         | Type                            |
-| ------------- | ------------------------------- |
-| **`options`** | <code>{ value: string; }</code> |
+| Param             | Type                |
+| ----------------- | ------------------- |
+| **`accessToken`** | <code>string</code> |
 
 **Returns:** <code>any</code>
 
