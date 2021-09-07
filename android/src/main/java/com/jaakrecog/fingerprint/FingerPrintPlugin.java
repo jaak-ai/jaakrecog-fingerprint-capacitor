@@ -32,9 +32,11 @@ public class FingerPrintPlugin extends Plugin {
      @PluginMethod
     public void callFingerAcequisition(PluginCall call) {
         try {
-            String apiKey = call.getString("value");
-             validateCredentials= new ValidateCredentialsImpl(this.getContext());
-            String jwToken=validateCredentials.validateCredentials(apiKey);
+            String apiKey = call.getString("apikey");
+            Boolean dev = call.getBoolean("develop");
+
+            validateCredentials= new ValidateCredentialsImpl(this.getContext());
+            String jwToken=validateCredentials.validateCredentials(apiKey,dev);
 
             Intent callIntentActivity =
                     new Intent(getActivity(),

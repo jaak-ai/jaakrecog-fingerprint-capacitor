@@ -19,10 +19,14 @@ public class ValidateCredentialsImpl extends Thread implements ValidateCredentia
 
 
     @Override
-    public String validateCredentials(String apiKey) throws JSONException, IOException {
+    public String validateCredentials(String apiKey,Boolean dev) throws JSONException, IOException {
 
         String url = "https://dev.api.jaakrecog.com/api/session";
 
+        if(!dev){
+
+                url = "https://api.jaakrecog.com/api/session";
+        }
         String response = callApi.callPost(url, new JSONObject().put("apiKey", apiKey));
 
         CredentialsResponse credentialsResponse = new CredentialsResponse(new JSONObject(response));
