@@ -1,3 +1,3 @@
 export interface FingerPrintPlugin {
-  callFingerAcequisition(options: { value: string }): Promise<{ value: string }>;
+  callFingerAcequisition(options: { apiKey: string,develop:boolean }): Promise<{ value: string }>;
 }
