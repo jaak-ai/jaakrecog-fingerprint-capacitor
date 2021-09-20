@@ -33,7 +33,7 @@ public class FingerPrintPlugin extends Plugin {
 
     private ValidateCredentialsImpl validateCredentials;
      @PluginMethod
-    public void callFingerAcequisition(PluginCall call) {
+    public void callFingerAcquisition(PluginCall call) {
         try {
             String apiKey = call.getString("apikey");
             Boolean dev = call.getBoolean("develop");
