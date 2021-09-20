@@ -30,7 +30,7 @@ public class FingerPrintPlugin extends Plugin {
     private FingerPrint implementation = new FingerPrint();
     private ValidateCredentialsImpl validateCredentials;
      @PluginMethod
-    public void callFingerAcequisition(PluginCall call) {
+    public void callFingerAcquisition(PluginCall call) {
         try {
             String apiKey = call.getString("value");
              validateCredentials= new ValidateCredentialsImpl(this.getContext());
