@@ -1,3 +1,11 @@
+# [1.0.0-dev.7](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.6...v1.0.0-dev.7) (2021-09-20)
+
+
+### Bug Fixes
+
+* correction on declaration class ([d795352](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/commit/d79535254780f499b3928ea6ad74104e7a67f974))
+* Name method correction ([c737146](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/commit/c7371465efc7a89357233edb9f57cd730f4724f3))
+
 # [1.0.0-dev.6](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.5...v1.0.0-dev.6) (2021-09-06)
 
 
