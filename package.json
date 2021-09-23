@@ -1,6 +1,6 @@
 {
   "name": "jaakrecog-fingerprint",
-  "version": "1.0.0-dev.1",
+  "version": "1.0.0-dev.7",
   "description": "This plugin is for jaakrecog fingerprint",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -17,7 +17,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jaak-it/fingerprint-capacitor.git"
+    "url": "git+https://github.com/jaak-it/jaakrecog-fingerprint-capacitor.git"
   },
   "bugs": {
     "url": "https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/issues"
@@ -27,6 +27,7 @@
     "plugin",
     "native"
   ],
+  "private": false,
   "scripts": {
     "verify": "npm run verify:ios && npm run verify:android && npm run verify:web",
     "verify:ios": "cd ios && pod install && xcodebuild -workspace Plugin.xcworkspace -scheme Plugin && cd ..",
@@ -41,7 +42,8 @@
     "build": "npm run clean && npm run docgen && tsc && rollup -c rollup.config.js",
     "clean": "rimraf ./dist",
     "watch": "tsc --watch",
-    "prepublishOnly": "npm run build",
+    "prepublishOnly": "pinst --disable && npm run build",
+    "postpublish": "pinst --enable",
     "postinstall": "husky install"
   },
   "devDependencies": {
