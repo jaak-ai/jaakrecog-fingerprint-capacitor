@@ -77,8 +77,6 @@ public class FingerPrintPlugin extends Plugin {
             byte[] bytesWsqRigth = Base64.decode(fingerRigthWsq, 1);
             InputStream inputStreamRigthFinger = new ByteArrayInputStream(bytesWsqRigth);
 
-
-
             JSObject ret = new JSObject();
             ret.put("fingerRigth", fingerLeftWsq);
             ret.put("fingerLeft", fingerRigthWsq);
