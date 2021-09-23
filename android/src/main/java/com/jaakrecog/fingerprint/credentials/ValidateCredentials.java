@@ -5,5 +5,5 @@ import org.json.JSONException;
 import java.io.IOException;
 
 public interface ValidateCredentials {
-    String validateCredentials(String apiToken,Boolean dev) throws JSONException, IOException;
+    String validateCredentials(String apiToken,Boolean is_production) throws JSONException, IOException;
 }

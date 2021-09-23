@@ -13,22 +13,22 @@ npx cap sync
 
 <docgen-index>
 
-* [`callFingerAcequisition(...)`](#callfingeracequisition)
+* [`callFingerAcquisition(...)`](#callfingeracquisition)
 
 </docgen-index>
 
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
-### callFingerAcequisition(...)
+### callFingerAcquisition(...)
 
 ```typescript
-callFingerAcequisition(options: { value: string; }) => any
+callFingerAcquisition(options: { accessToken: string; is_production: boolean; }) => any
 ```
 
-| Param         | Type                            |
-| ------------- | ------------------------------- |
-| **`options`** | <code>{ value: string; }</code> |
+| Param         | Type                                                          |
+| ------------- | ------------------------------------------------------------- |
+| **`options`** | <code>{ accessToken: string; is_production: boolean; }</code> |
 
 **Returns:** <code>any</code>
 

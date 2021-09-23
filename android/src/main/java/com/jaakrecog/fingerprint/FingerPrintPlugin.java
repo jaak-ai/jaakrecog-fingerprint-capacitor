@@ -5,6 +5,7 @@ import static android.app.Activity.RESULT_OK;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Environment;
 import android.util.Base64;
 import android.util.Log;
 
@@ -33,10 +34,10 @@ public class FingerPrintPlugin extends Plugin {
 
     private ValidateCredentialsImpl validateCredentials;
      @PluginMethod
-    public void callFingerAcequisition(PluginCall call) {
+    public void callFingerAcquisition(PluginCall call) {
         try {
-            String apiKey = call.getString("apikey");
-            Boolean dev = call.getBoolean("develop");
+            String apiKey = call.getString("accessToken");
+            Boolean dev =   call.getBoolean("is_production");
 
             validateCredentials= new ValidateCredentialsImpl(this.getContext());
             String jwToken=validateCredentials.validateCredentials(apiKey,dev);
@@ -66,19 +67,22 @@ public class FingerPrintPlugin extends Plugin {
         }
         if ((result.getResultCode()== RESULT_OK)) {
 
-
             String fingerLeftWsq=    result.getData().getStringExtra("fingerLeftWsq");
             String fingerRigthWsq=   result.getData().getStringExtra("fingerRigthWsq");
 
-            byte [] bytesWsqLeft = Base64.decode(fingerLeftWsq,1);
+            Log.e("Plugin finger result",":"+fingerRigthWsq);
+            Log.e("Plugin finger result",":"+fingerRigthWsq);
+            byte[] bytesWsqLeft = Base64.decode(fingerLeftWsq, 1);
             InputStream inputStreamLeftFinger = new ByteArrayInputStream(bytesWsqLeft);
-            byte [] bytesWsqRigth = Base64.decode(fingerRigthWsq,1);
+            byte[] bytesWsqRigth = Base64.decode(fingerRigthWsq, 1);
             InputStream inputStreamRigthFinger = new ByteArrayInputStream(bytesWsqRigth);
+
+
+
             JSObject ret = new JSObject();
             ret.put("fingerRigth", fingerLeftWsq);
             ret.put("fingerLeft", fingerRigthWsq);
             call.resolve(ret);
-
 
 
         }else{
@@ -88,9 +92,6 @@ public class FingerPrintPlugin extends Plugin {
             ret.put("errorRigth", fingerLeftError);
             ret.put("errorLeft", fingerRigthError);
             call.resolve(ret);
-
-
-
 
 
         }
