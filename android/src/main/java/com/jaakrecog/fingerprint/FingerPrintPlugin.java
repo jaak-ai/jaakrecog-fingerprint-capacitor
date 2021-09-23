@@ -1,8 +1,12 @@
 package com.jaakrecog.fingerprint;
 
+import static android.app.Activity.RESULT_OK;
+
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Environment;
+import android.util.Base64;
 import android.util.Log;
 
 import androidx.activity.result.ActivityResult;
@@ -18,6 +22,7 @@ import com.jaakrecog.fingerprint.utils.Utils;
 
 import org.json.JSONObject;
 
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -27,19 +32,22 @@ import java.io.InputStream;
 @CapacitorPlugin(name = "FingerPrint")
 public class FingerPrintPlugin extends Plugin {
 
-    private FingerPrint implementation = new FingerPrint();
     private ValidateCredentialsImpl validateCredentials;
      @PluginMethod
     public void callFingerAcquisition(PluginCall call) {
         try {
-            String apiKey = call.getString("value");
-             validateCredentials= new ValidateCredentialsImpl(this.getContext());
-            String jwToken=validateCredentials.validateCredentials(apiKey);
+            String apiKey = call.getString("accessToken");
+            Boolean dev =   call.getBoolean("is_production");
+
+            validateCredentials= new ValidateCredentialsImpl(this.getContext());
+            String jwToken=validateCredentials.validateCredentials(apiKey,dev);
 
             Intent callIntentActivity =
                     new Intent(getActivity(),
                     Class.forName("com.jaakit.fingeracequisition.FingerActivity"));
             callIntentActivity.putExtra("jwtoken",jwToken);
+            callIntentActivity.putExtra("isProduction",dev);
+
             startActivityForResult(call,callIntentActivity,"captureFingersResult");
 
 
@@ -57,27 +65,34 @@ public class FingerPrintPlugin extends Plugin {
         if (call == null) {
             return;
         }
-        Uri imgURILeft = Uri.parse(result.getData().getStringExtra("fingerLeftBytes"));
-        Uri imgURIRigth = Uri.parse(result.getData().getStringExtra("fingerRigthBytes"));
+        if ((result.getResultCode()== RESULT_OK)) {
 
-        try{
+            String fingerLeftWsq=    result.getData().getStringExtra("fingerLeftWsq");
+            String fingerRigthWsq=   result.getData().getStringExtra("fingerRigthWsq");
 
-            ContentResolver cr = getContext().getContentResolver();
-            InputStream inputStreamLeftFinger = cr.openInputStream(imgURILeft);
-            Utils.copyInputStreamToFile(inputStreamLeftFinger,new File("dedo_izquierdo.wsq"));
-            InputStream inputStreamRigthFinger = cr.openInputStream(imgURIRigth);
-            Utils.copyInputStreamToFile(inputStreamRigthFinger,new File("dedo_derecho.wsq"));
+            Log.e("Plugin finger result",":"+fingerRigthWsq);
+            Log.e("Plugin finger result",":"+fingerRigthWsq);
+            byte[] bytesWsqLeft = Base64.decode(fingerLeftWsq, 1);
+            InputStream inputStreamLeftFinger = new ByteArrayInputStream(bytesWsqLeft);
+            byte[] bytesWsqRigth = Base64.decode(fingerRigthWsq, 1);
+            InputStream inputStreamRigthFinger = new ByteArrayInputStream(bytesWsqRigth);
+
             JSObject ret = new JSObject();
-            ret.put("fingerRigth", imgURIRigth);
-            ret.put("fingerLeft", imgURILeft);
+            ret.put("fingerRigth", fingerLeftWsq);
+            ret.put("fingerLeft", fingerRigthWsq);
             call.resolve(ret);
 
-        }catch (FileNotFoundException fileNotFoundException){
-            fileNotFoundException.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
+        }else{
+            String fingerLeftError=   result.getData().getStringExtra("fingerLeftError");
+            String fingerRigthError=   result.getData().getStringExtra("fingerRigthError");
+            JSObject ret = new JSObject();
+            ret.put("errorRigth", fingerLeftError);
+            ret.put("errorLeft", fingerRigthError);
+            call.resolve(ret);
+
+
+        }
 
 
     }

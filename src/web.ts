@@ -3,8 +3,9 @@ import { WebPlugin } from '@capacitor/core';
 import type { FingerPrintPlugin } from './definitions';
 
 export class FingerPrintWeb extends WebPlugin implements FingerPrintPlugin {
-  async callFingerAcequisition(acccessToken: string): Promise<{ value: string }> {
-    console.log('ECHO', acccessToken);
-    return {value: 'This is a test'};
-  }
+    async callFingerAcquisition(options:{accessToken: string,is_production:boolean}): Promise<{fingerLeft: string, fingerRigth: string}> {
+      console.log('ECHO', options);
+      return {fingerLeft: "",fingerRigth:""};
+    }
+
 }
