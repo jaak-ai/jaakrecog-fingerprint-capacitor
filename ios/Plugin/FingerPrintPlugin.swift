@@ -9,6 +9,7 @@ import JAAKFingerAcquisition
 public class FingerPrintPlugin: CAPPlugin {
     private let implementation = FingerPrint()
     private let authService = AuthServiceImplementation()
+    private var callbackId: String?
 
 //    @objc func echo(_ call: CAPPluginCall) {
 //        let value = call.getString("value") ?? ""
@@ -18,6 +19,9 @@ public class FingerPrintPlugin: CAPPlugin {
 //    }
     
     @objc func callFingerAcequisition(_ call: CAPPluginCall) {
+        self.callbackId = call.callbackId
+        self.bridge?.saveCall(call)
+        
         let apiKey = call.getString("value") ?? ""
         
         // TODO: Not sure why apiKey is empty here.
@@ -43,7 +47,39 @@ public class FingerPrintPlugin: CAPPlugin {
         DispatchQueue.main.async {
 //            let bundle = Bundle(for: FAMainViewController.self)
             let onboardingVC = FAMainViewController()//.loadFromNib(bundle: bundle)
+            onboardingVC.jwt = jwt
+            onboardingVC.delegate = self
             bridge.viewController?.present(onboardingVC, animated: true, completion: nil)
+        }
+    }
+}
+
+extension FingerPrintPlugin: FAMainViewControllerDelegate {
+    public func faMainViewControllerDidEndWithResult(results: [FAHand : String]) {
+        // Results has the wsq in each value, instead of a path to a .wsq file
+        // TODO: Change this to have a local path instead of the actual .wsq
+        
+        guard let bridge = self.bridge else {
+            return
+        }
+        
+        DispatchQueue.main.async {
+            bridge.dismissVC(animated: true) {
+                print("------ WSQ ------ ")
+                print(results)
+                guard let callbackId = self.callbackId else {
+                    return
+                }
+                
+                let pluginCall = bridge.savedCall(withID: callbackId)
+                
+                // Added same keys and values set in the Android counterpart
+                
+                pluginCall?.resolve([
+                    "fingerRigth" : results[.right(.index)] ?? "",
+                    "fingerLeft" : results[.left(.index)] ?? ""
+                ])
+            }
         }
     }
 }
