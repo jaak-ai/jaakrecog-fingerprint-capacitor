@@ -31,9 +31,28 @@ Use the function to make auths
 ```
 ## API
 
-<docgen-index></docgen-index>
+<docgen-index>
+
+* [`callFingerAcquisition(...)`](#callfingeracquisition)
+
+</docgen-index>
 
 <docgen-api>
-<!-- run docgen to generate docs from the source -->
-<!-- More info: https://github.com/ionic-team/capacitor-docgen -->
+<!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
+
+### callFingerAcquisition(...)
+
+```typescript
+callFingerAcquisition(options: { accessToken: string; is_production: boolean; }) => any
+```
+
+| Param         | Type                                                          |
+| ------------- | ------------------------------------------------------------- |
+| **`options`** | <code>{ accessToken: string; is_production: boolean; }</code> |
+
+
+**Returns:** <code>any</code>
+
+--------------------
+
 </docgen-api>
