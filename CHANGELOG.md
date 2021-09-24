@@ -1,3 +1,10 @@
+# [1.0.0-dev.9](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.8...v1.0.0-dev.9) (2021-09-24)
+
+
+### Bug Fixes
+
+* maven repositories ([e961227](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/commit/e961227e94bc0a8e9b4afd05d21be5687b5c8cbf))
+
 # [1.0.0-dev.8](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.7...v1.0.0-dev.8) (2021-09-24)
 
 
