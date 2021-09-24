@@ -49,14 +49,11 @@ allprojects {
         google()
         jcenter()
         maven {
-            url "artifactregistry://us-central1-maven.pkg.dev/jaakrecog-1to1-similarity/jaakrecog-maven"
+            url "https://devtools.jaakrecog.com/repository/jaakrecog/"
         }
 
     }
 }
-
-
-
 
 dependencies {
 
@@ -71,7 +68,7 @@ dependencies {
     def arch_version = '2.2.0-alpha01'
     implementation "androidx.lifecycle:lifecycle-extensions:$arch_version"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$arch_version"
-    implementation group: 'com.jaakit.fingeracequisition', name: 'finger-capture', version: '1.0.7'
+    implementation group: 'com.jaakit.fingeracquisition', name: 'finger-capture', version: '1.0.7'
     implementation group: 'com.jaakrecog.fingerprint', name: 'finger-analysis', version: '1.0.4'
 
 
