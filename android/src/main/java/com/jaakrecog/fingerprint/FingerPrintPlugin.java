@@ -76,7 +76,6 @@ public class FingerPrintPlugin extends Plugin {
             Uri stringUriFingerLeftWsq=   result.getData().getParcelableExtra("uriWsqFingerLeft");
             Uri stringUriFingerRigthWsq=   result.getData().getParcelableExtra("uriWsqFingerRigth");
 
-
             InputStream inl = context.getContentResolver().openInputStream(stringUriFingerLeftWsq);
             InputStream inr = context.getContentResolver().openInputStream(stringUriFingerRigthWsq);
             File dirLeft = new File(root + "/wsq_left_finger.wsq");
