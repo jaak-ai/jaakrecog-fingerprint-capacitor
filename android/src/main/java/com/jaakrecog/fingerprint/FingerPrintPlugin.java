@@ -1,8 +1,8 @@
 package com.jaakrecog.fingerprint;
 
 import static android.app.Activity.RESULT_OK;
-
 import android.content.ContentResolver;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Environment;
@@ -32,6 +32,8 @@ import java.io.InputStream;
 @CapacitorPlugin(name = "FingerPrint")
 public class FingerPrintPlugin extends Plugin {
 
+
+    Context context;
     private ValidateCredentialsImpl validateCredentials;
      @PluginMethod
     public void callFingerAcquisition(PluginCall call) {
@@ -39,6 +41,7 @@ public class FingerPrintPlugin extends Plugin {
             String apiKey = call.getString("accessToken");
             Boolean dev =   call.getBoolean("is_production");
 
+            context=this.context;
             validateCredentials= new ValidateCredentialsImpl(this.getContext());
             String jwToken=validateCredentials.validateCredentials(apiKey,dev);
 
@@ -61,25 +64,27 @@ public class FingerPrintPlugin extends Plugin {
      }
 
     @ActivityCallback
-    private void captureFingersResult(PluginCall call, ActivityResult result) {
+    private void captureFingersResult(PluginCall call, ActivityResult result) throws FileNotFoundException {
         if (call == null) {
             return;
         }
+        String root = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM).toString();
+
         if ((result.getResultCode()== RESULT_OK)) {
 
-            String fingerLeftWsq=    result.getData().getStringExtra("fingerLeftWsq");
-            String fingerRigthWsq=   result.getData().getStringExtra("fingerRigthWsq");
 
-            Log.e("Plugin finger result",":"+fingerRigthWsq);
-            Log.e("Plugin finger result",":"+fingerRigthWsq);
-            byte[] bytesWsqLeft = Base64.decode(fingerLeftWsq, 1);
-            InputStream inputStreamLeftFinger = new ByteArrayInputStream(bytesWsqLeft);
-            byte[] bytesWsqRigth = Base64.decode(fingerRigthWsq, 1);
-            InputStream inputStreamRigthFinger = new ByteArrayInputStream(bytesWsqRigth);
+            Uri stringUriFingerLeftWsq=   result.getData().getParcelableExtra("uriWsqFingerLeft");
+            Uri stringUriFingerRigthWsq=   result.getData().getParcelableExtra("uriWsqFingerRigth");
+
+
+            InputStream inl = context.getContentResolver().openInputStream(stringUriFingerLeftWsq);
+            InputStream inr = context.getContentResolver().openInputStream(stringUriFingerRigthWsq);
+            File dirLeft = new File(root + "/wsq_left_finger.wsq");
+            File dirRigth = new File(root + "/wsq_rigth_finger.wsq");
 
             JSObject ret = new JSObject();
-            ret.put("fingerRigth", fingerLeftWsq);
-            ret.put("fingerLeft", fingerRigthWsq);
+            ret.put("fingerRigth", dirLeft.getAbsolutePath());
+            ret.put("fingerLeft", dirRigth.getAbsolutePath());
             call.resolve(ret);
 
 
