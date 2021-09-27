@@ -47,7 +47,7 @@ public class FingerPrintPlugin extends Plugin {
 
             Intent callIntentActivity =
                     new Intent(getActivity(),
-                    Class.forName("com.jaakit.fingeracequisition.FingerActivity"));
+                    Class.forName("com.jaakit.fingeracquisition.FingerActivity"));
             callIntentActivity.putExtra("jwtoken",jwToken);
             callIntentActivity.putExtra("isProduction",dev);
 
@@ -81,6 +81,7 @@ public class FingerPrintPlugin extends Plugin {
             File dirLeft = new File(root + "/wsq_left_finger.wsq");
             File dirRigth = new File(root + "/wsq_rigth_finger.wsq");
 
+            
             JSObject ret = new JSObject();
             ret.put("fingerRigth", dirLeft.getAbsolutePath());
             ret.put("fingerLeft", dirRigth.getAbsolutePath());
