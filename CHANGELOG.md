@@ -1,3 +1,10 @@
+# [1.0.0-dev.10](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.9...v1.0.0-dev.10) (2021-09-27)
+
+
+### Bug Fixes
+
+* **session:** timeout exception on session class ([4a3cc5e](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/commit/4a3cc5e2d211a63419be64f6142c28544292768c))
+
 # [1.0.0-dev.9](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.8...v1.0.0-dev.9) (2021-09-24)
 
 
