@@ -19,7 +19,6 @@ buildscript {
 
 
 apply plugin: 'com.android.library'
-apply plugin: "com.google.cloud.artifactregistry.gradle-plugin"
 
 android {
     compileSdkVersion project.hasProperty('compileSdkVersion') ? rootProject.ext.compileSdkVersion : 30
