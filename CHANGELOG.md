@@ -1,3 +1,10 @@
+# [1.0.0-dev.11](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.10...v1.0.0-dev.11) (2021-09-28)
+
+
+### Bug Fixes
+
+* **gradle:** update version ob finger-capture to 1.0.8 ([a46d790](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/commit/a46d790f3831a9af27b3247800a489e0e880e46e))
+
 # [1.0.0-dev.10](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.9...v1.0.0-dev.10) (2021-09-27)
 
 
