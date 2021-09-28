@@ -45,7 +45,6 @@ public class FingerPrintPlugin extends Plugin {
         try {
             String apiKey = call.getString("accessToken");
             Boolean dev =   call.getBoolean("is_production");
-
             context=getContext();
             root = context.getFilesDir().getAbsolutePath();
             validateCredentials= new ValidateCredentialsImpl(context);
