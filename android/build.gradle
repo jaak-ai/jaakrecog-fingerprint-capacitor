@@ -10,16 +10,17 @@ buildscript {
         maven {
             url "https://plugins.gradle.org/m2/"
         }
+        maven {
+            url "https://devtools.jaakrecog.com/repository/jaakrecog/"
+        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:4.2.1'
-        classpath 'gradle.plugin.com.google.cloud.artifactregistry:artifactregistry-gradle-plugin:2.1.2'
     }
 }
 
 
 apply plugin: 'com.android.library'
-apply plugin: "com.google.cloud.artifactregistry.gradle-plugin"
 
 android {
     compileSdkVersion project.hasProperty('compileSdkVersion') ? rootProject.ext.compileSdkVersion : 30
@@ -54,9 +55,6 @@ allprojects {
 
     }
 }
-
-
-
 
 dependencies {
 
