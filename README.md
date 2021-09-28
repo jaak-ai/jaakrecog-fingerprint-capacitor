@@ -30,6 +30,7 @@ callFingerAcquisition(options: { accessToken: string; is_production: boolean; })
 | ------------- | ------------------------------------------------------------- |
 | **`options`** | <code>{ accessToken: string; is_production: boolean; }</code> |
 
+
 **Returns:** <code>any</code>
 
 --------------------
