@@ -1,3 +1,13 @@
+# [1.0.0-dev.12](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.11...v1.0.0-dev.12) (2021-09-28)
+
+
+### Bug Fixes
+
+* **gradle:** fix ([a286ea9](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/commit/a286ea9f5ddebded0e474b41d7bc2965ee7a9511))
+* **gradle:** fix artifacts references and version of capture ([2d7331c](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/commit/2d7331c4e88738de247e00be1774abc4fe28f8e7))
+* **storage:** fix path to internal application ([c7b51c0](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/commit/c7b51c027767eb2fba826a4511493bf9f3bec60a))
+* **storage:** fix path to internal application ([3cdafe2](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/commit/3cdafe22a900de89f6f36330984a0377e4368b21))
+
 # [1.0.0-dev.11](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.10...v1.0.0-dev.11) (2021-09-28)
 
 
