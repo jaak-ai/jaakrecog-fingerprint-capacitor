@@ -5,11 +5,13 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Environment;
 import android.util.Base64;
 import android.util.Log;
 
 import androidx.activity.result.ActivityResult;
+import androidx.annotation.RequiresApi;
 
 import com.getcapacitor.JSObject;
 import com.getcapacitor.Plugin;
@@ -29,20 +31,23 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
+@RequiresApi(api = Build.VERSION_CODES.R)
 @CapacitorPlugin(name = "FingerPrint")
 public class FingerPrintPlugin extends Plugin {
 
 
     Context context;
+    String root;
+
     private ValidateCredentialsImpl validateCredentials;
      @PluginMethod
     public void callFingerAcquisition(PluginCall call) {
         try {
             String apiKey = call.getString("accessToken");
             Boolean dev =   call.getBoolean("is_production");
-
-            context=this.context;
-            validateCredentials= new ValidateCredentialsImpl(this.getContext());
+            context=getContext();
+            root = context.getFilesDir().getAbsolutePath();
+            validateCredentials= new ValidateCredentialsImpl(context);
             String jwToken=validateCredentials.validateCredentials(apiKey,dev);
 
             Intent callIntentActivity =
@@ -50,6 +55,7 @@ public class FingerPrintPlugin extends Plugin {
                     Class.forName("com.jaakit.fingeracquisition.FingerActivity"));
             callIntentActivity.putExtra("jwtoken",jwToken);
             callIntentActivity.putExtra("isProduction",dev);
+
 
             startActivityForResult(call,callIntentActivity,"captureFingersResult");
 
@@ -68,7 +74,6 @@ public class FingerPrintPlugin extends Plugin {
         if (call == null) {
             return;
         }
-        String root = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM).toString();
 
         if ((result.getResultCode()== RESULT_OK)) {
 
@@ -81,7 +86,7 @@ public class FingerPrintPlugin extends Plugin {
             File dirLeft = new File(root + "/wsq_left_finger.wsq");
             File dirRigth = new File(root + "/wsq_rigth_finger.wsq");
 
-            
+
             JSObject ret = new JSObject();
             ret.put("fingerRigth", dirLeft.getAbsolutePath());
             ret.put("fingerLeft", dirRigth.getAbsolutePath());
