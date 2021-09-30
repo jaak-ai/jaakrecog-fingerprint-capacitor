@@ -1,3 +1,10 @@
+# [1.0.0-dev.13](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.12...v1.0.0-dev.13) (2021-09-30)
+
+
+### Bug Fixes
+
+* **object result:** finx to object return in reponse and upgrade capture component ([540840d](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/commit/540840dad2cd2160f241993527a5322d0c63b06e))
+
 # [1.0.0-dev.12](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.11...v1.0.0-dev.12) (2021-09-28)
 
 
