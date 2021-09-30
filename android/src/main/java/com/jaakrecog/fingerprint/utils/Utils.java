@@ -1,5 +1,10 @@
 package com.jaakrecog.fingerprint.utils;
 
+import android.content.Context;
+import android.net.Uri;
+
+import androidx.core.content.FileProvider;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -19,4 +24,13 @@ public class Utils {
         }
 
     }
+
+    public static void saveWsqToCache(Context context,String fileName){
+        File file = new File(context.getCacheDir(), fileName);
+        Uri uri = FileProvider.getUriForFile(context,"com.plugin.fileprovider", file);
+
+
+    }
+
 }
+
