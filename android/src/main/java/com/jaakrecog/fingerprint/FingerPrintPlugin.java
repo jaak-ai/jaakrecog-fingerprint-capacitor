@@ -1,13 +1,9 @@
 package com.jaakrecog.fingerprint;
 
 import static android.app.Activity.RESULT_OK;
-import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Build;
-import android.os.Environment;
-import android.util.Base64;
 import android.util.Log;
 
 import androidx.activity.result.ActivityResult;
@@ -19,6 +15,7 @@ import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.ActivityCallback;
 import com.getcapacitor.annotation.CapacitorPlugin;
+import com.jaakit.fingeracquisition.finger_request.FingersAcquisitionObjects;
 import com.jaakrecog.fingerprint.credentials.ValidateCredentialsImpl;
 import com.jaakrecog.fingerprint.utils.Utils;
 
@@ -34,19 +31,14 @@ import java.io.InputStream;
 @RequiresApi(api = Build.VERSION_CODES.R)
 @CapacitorPlugin(name = "FingerPrint")
 public class FingerPrintPlugin extends Plugin {
-
-
     Context context;
-    String root;
-
     private ValidateCredentialsImpl validateCredentials;
      @PluginMethod
     public void callFingerAcquisition(PluginCall call) {
         try {
             String apiKey = call.getString("accessToken");
             Boolean dev =   call.getBoolean("is_production");
-            context=getContext();
-            root = context.getFilesDir().getAbsolutePath();
+
             validateCredentials= new ValidateCredentialsImpl(context);
             String jwToken=validateCredentials.validateCredentials(apiKey,dev);
 
@@ -55,8 +47,6 @@ public class FingerPrintPlugin extends Plugin {
                     Class.forName("com.jaakit.fingeracquisition.FingerActivity"));
             callIntentActivity.putExtra("jwtoken",jwToken);
             callIntentActivity.putExtra("isProduction",dev);
-
-
             startActivityForResult(call,callIntentActivity,"captureFingersResult");
 
 
@@ -70,35 +60,64 @@ public class FingerPrintPlugin extends Plugin {
      }
 
     @ActivityCallback
-    private void captureFingersResult(PluginCall call, ActivityResult result) throws FileNotFoundException {
+    private void captureFingersResult(PluginCall call, ActivityResult result) throws IOException {
         if (call == null) {
             return;
         }
 
         if ((result.getResultCode()== RESULT_OK)) {
-
-
-            Uri stringUriFingerLeftWsq=   result.getData().getParcelableExtra("uriWsqFingerLeft");
-            Uri stringUriFingerRigthWsq=   result.getData().getParcelableExtra("uriWsqFingerRigth");
-
-            InputStream inl = context.getContentResolver().openInputStream(stringUriFingerLeftWsq);
-            InputStream inr = context.getContentResolver().openInputStream(stringUriFingerRigthWsq);
-            File dirLeft = new File(root + "/wsq_left_finger.wsq");
-            File dirRigth = new File(root + "/wsq_rigth_finger.wsq");
-
-
             JSObject ret = new JSObject();
-            ret.put("fingerRigth", dirLeft.getAbsolutePath());
-            ret.put("fingerLeft", dirRigth.getAbsolutePath());
-            call.resolve(ret);
+             FingersAcquisitionObjects fingerAcquisitionObjects=
+                    (FingersAcquisitionObjects) result.getData().
+                            getSerializableExtra("fingersAcequisitionObjects");
+
+            Log.d("#######################","LEFT HAND");
+            Log.d("EXTRACT getEventId",":"+fingerAcquisitionObjects.
+                    getFingersAcequisitionObjectsLeftFinger().
+                    getFingerSuccessfullResponse().getEventId());
+            Log.d("EXTRACT getFingerSide",":"+fingerAcquisitionObjects.
+                    getFingersAcequisitionObjectsLeftFinger().
+                    getFingerSuccessfullResponse().getFingerSide());
+            Log.d("EXTRACT getAcquired",":"+fingerAcquisitionObjects.
+                    getFingersAcequisitionObjectsLeftFinger().
+                    getFingerSuccessfullResponse().getAcquired());
+
+            Log.d("#######################","RIGHT HAND");
+
+            Log.d("EXTRACT getEventId",":"+fingerAcquisitionObjects.
+                    getFingersAcequisitionObjectsRigthFinger()
+                    .getFingerSuccessfullResponse().getEventId());
+            Log.d("EXTRACT getFingerSide",":"+fingerAcquisitionObjects.
+                    getFingersAcequisitionObjectsRigthFinger()
+                    .getFingerSuccessfullResponse().getFingerSide());
+            Log.d("EXTRACT getAcquired",":"+fingerAcquisitionObjects.
+                    getFingersAcequisitionObjectsRigthFinger().
+                    getFingerSuccessfullResponse().getAcquired());
+
+
+            ret.put("eventIdLeft",fingerAcquisitionObjects.
+                    getFingersAcequisitionObjectsLeftFinger().getFingerSuccessfullResponse().getEventId());
+            ret.put("acquireLeft",fingerAcquisitionObjects.
+                   getFingersAcequisitionObjectsLeftFinger().getFingerSuccessfullResponse().getAcquired());
+
+
+
+            ret.put("eventIdRight",fingerAcquisitionObjects.
+                    getFingersAcequisitionObjectsRigthFinger().getFingerSuccessfullResponse().getEventId());
+            ret.put("acquireRight",fingerAcquisitionObjects.
+                    getFingersAcequisitionObjectsRigthFinger().getFingerSuccessfullResponse().getAcquired());
+
+
+             call.resolve(ret);
 
 
         }else{
-            String fingerLeftError=   result.getData().getStringExtra("fingerLeftError");
-            String fingerRigthError=   result.getData().getStringExtra("fingerRigthError");
             JSObject ret = new JSObject();
-            ret.put("errorRigth", fingerLeftError);
-            ret.put("errorLeft", fingerRigthError);
+            ret.put("eventIdLeft",result.getData().getStringExtra("eventIdLeft"));
+            ret.put("acquireLeft",false);
+            ret.put("eventIdRigth", result.getData().getStringExtra("eventIdRigth"));
+            ret.put("acquireRigth", false);
+
             call.resolve(ret);
 
 
@@ -106,6 +125,7 @@ public class FingerPrintPlugin extends Plugin {
 
 
     }
+
 
 }
 
