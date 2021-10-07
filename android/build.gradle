@@ -76,6 +76,7 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$arch_version"
     implementation group: 'com.jaakit.fingeracquisition', name: 'finger-capture', version: '1.0.7'
     implementation group: 'com.jaakrecog.fingerprint', name: 'finger-analysis', version: '1.0.4'
+    implementation 'io.sentry:sentry-android:5.2.1'
 
 
 }

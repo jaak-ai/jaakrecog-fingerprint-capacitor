@@ -28,6 +28,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import io.sentry.Sentry;
 
 @CapacitorPlugin(name = "FingerPrint")
 public class FingerPrintPlugin extends Plugin {
@@ -53,9 +54,9 @@ public class FingerPrintPlugin extends Plugin {
 
         }catch (Exception ex){
             Log.e("Exception",ex.getMessage());
-            JSObject ret = new JSObject();
-            ret.put("error", ex.getMessage());
-            call.resolve(ret);
+            Sentry.captureException(ex);
+            call.reject("Error acquiring finger", ex);
+            //call.resolve(ret);
 
         }
      }
