@@ -1,3 +1,10 @@
+# [1.0.0-dev.14](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.13...v1.0.0-dev.14) (2021-10-07)
+
+
+### Bug Fixes
+
+* catching error ([ceaf11c](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/commit/ceaf11c9c8ac92ce8454bfb3872eb86c3485b868))
+
 # [1.0.0-dev.13](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.12...v1.0.0-dev.13) (2021-09-30)
 
 
