@@ -55,8 +55,6 @@ public class FingerPrintPlugin extends Plugin {
             Log.e("Exception",ex.getMessage());
             Sentry.captureException(ex);
             call.reject("Error acquiring finger", ex);
-            //call.resolve(ret);
-
         }
      }
 
