@@ -6,14 +6,8 @@ ext {
 buildscript {
     repositories {
         google()
-        jcenter()
         mavenCentral()
-        maven {
-            url "https://plugins.gradle.org/m2/"
-        }
-        maven {
-            url "https://devtools.jaakrecog.com/repository/jaakrecog/"
-        }
+
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:4.2.1'
@@ -49,17 +43,16 @@ android {
 allprojects {
     repositories {
         google()
-        jcenter()
         mavenCentral()
-        maven {
-            url "https://plugins.gradle.org/m2/"
-        }
         maven {
             url "https://devtools.jaakrecog.com/repository/jaakrecog/"
         }
 
     }
 }
+
+
+
 
 dependencies {
 
@@ -74,9 +67,8 @@ dependencies {
     def arch_version = '2.2.0-alpha01'
     implementation "androidx.lifecycle:lifecycle-extensions:$arch_version"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$arch_version"
-    implementation group: 'com.jaakit.fingeracquisition', name: 'finger-capture', version: '1.0.7'
+    implementation group: 'com.jaakit.fingeracquisition', name: 'finger-capture', version: '1.0.11'
     implementation group: 'com.jaakrecog.fingerprint', name: 'finger-analysis', version: '1.0.4'
     implementation 'io.sentry:sentry-android:5.2.1'
-
 
 }

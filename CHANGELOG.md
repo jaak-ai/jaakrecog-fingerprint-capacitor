@@ -1,3 +1,41 @@
+# [1.0.0-dev.13](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.12...v1.0.0-dev.13) (2021-09-30)
+
+
+### Bug Fixes
+
+* **object result:** finx to object return in reponse and upgrade capture component ([540840d](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/commit/540840dad2cd2160f241993527a5322d0c63b06e))
+
+# [1.0.0-dev.12](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.11...v1.0.0-dev.12) (2021-09-28)
+
+
+### Bug Fixes
+
+* **gradle:** fix ([a286ea9](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/commit/a286ea9f5ddebded0e474b41d7bc2965ee7a9511))
+* **gradle:** fix artifacts references and version of capture ([2d7331c](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/commit/2d7331c4e88738de247e00be1774abc4fe28f8e7))
+* **storage:** fix path to internal application ([c7b51c0](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/commit/c7b51c027767eb2fba826a4511493bf9f3bec60a))
+* **storage:** fix path to internal application ([3cdafe2](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/commit/3cdafe22a900de89f6f36330984a0377e4368b21))
+
+# [1.0.0-dev.11](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.10...v1.0.0-dev.11) (2021-09-28)
+
+
+### Bug Fixes
+
+* **gradle:** update version ob finger-capture to 1.0.8 ([a46d790](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/commit/a46d790f3831a9af27b3247800a489e0e880e46e))
+
+# [1.0.0-dev.10](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.9...v1.0.0-dev.10) (2021-09-27)
+
+
+### Bug Fixes
+
+* **session:** timeout exception on session class ([4a3cc5e](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/commit/4a3cc5e2d211a63419be64f6142c28544292768c))
+
+# [1.0.0-dev.9](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.8...v1.0.0-dev.9) (2021-09-24)
+
+
+### Bug Fixes
+
+* maven repositories ([e961227](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/commit/e961227e94bc0a8e9b4afd05d21be5687b5c8cbf))
+
 # [1.0.0-dev.8](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.7...v1.0.0-dev.8) (2021-09-24)
 
 
