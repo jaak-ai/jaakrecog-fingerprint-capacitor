@@ -1,3 +1,10 @@
+# [1.0.0-dev.19](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.18...v1.0.0-dev.19) (2021-10-08)
+
+
+### Bug Fixes
+
+* change snapshot to 1.0.14-SNAPSHOT ([592ee28](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/commit/592ee28f40adcdf54b1077dc3aed1fb8fd037556))
+
 # [1.0.0-dev.18](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.17...v1.0.0-dev.18) (2021-10-08)
 
 
