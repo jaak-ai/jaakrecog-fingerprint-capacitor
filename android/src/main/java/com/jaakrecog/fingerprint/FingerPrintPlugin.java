@@ -1,6 +1,7 @@
 package com.jaakrecog.fingerprint;
 
 import static android.app.Activity.RESULT_OK;
+
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
@@ -17,16 +18,9 @@ import com.getcapacitor.annotation.ActivityCallback;
 import com.getcapacitor.annotation.CapacitorPlugin;
 import com.jaakit.fingeracquisition.finger_request.FingersAcquisitionObjects;
 import com.jaakrecog.fingerprint.credentials.ValidateCredentialsImpl;
-import com.jaakrecog.fingerprint.utils.Utils;
 
-import org.json.JSONObject;
-
-import java.io.ByteArrayInputStream;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
+
 import io.sentry.Sentry;
 
 @RequiresApi(api = Build.VERSION_CODES.R)
