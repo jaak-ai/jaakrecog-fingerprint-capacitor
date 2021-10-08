@@ -1,3 +1,10 @@
+# [1.0.0-dev.16](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.15...v1.0.0-dev.16) (2021-10-08)
+
+
+### Bug Fixes
+
+* change snapshot for test sentry and blur ([4ac0831](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/commit/4ac0831f31301106d7e22e1ea53a8b9d5b85ca15))
+
 # [1.0.0-dev.15](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.14...v1.0.0-dev.15) (2021-10-08)
 
 
