@@ -16,6 +16,7 @@ import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.ActivityCallback;
 import com.getcapacitor.annotation.CapacitorPlugin;
+import com.google.gson.Gson;
 import com.jaakit.fingeracquisition.finger_request.FingersAcquisitionObjects;
 import com.jaakrecog.fingerprint.credentials.ValidateCredentialsImpl;
 
@@ -64,44 +65,19 @@ public class FingerPrintPlugin extends Plugin {
                     (FingersAcquisitionObjects) result.getData().
                             getSerializableExtra("fingersAcequisitionObjects");
 
-            Log.d("#######################","LEFT HAND");
-            Log.d("EXTRACT getEventId",":"+fingerAcquisitionObjects.
-                    getFingersAcequisitionObjectsLeftFinger().
-                    getFingerSuccessfullResponse().getEventId());
-            Log.d("EXTRACT getFingerSide",":"+fingerAcquisitionObjects.
-                    getFingersAcequisitionObjectsLeftFinger().
-                    getFingerSuccessfullResponse().getFingerSide());
-            Log.d("EXTRACT getAcquired",":"+fingerAcquisitionObjects.
-                    getFingersAcequisitionObjectsLeftFinger().
-                    getFingerSuccessfullResponse().getAcquired());
-
-            Log.d("#######################","RIGHT HAND");
-
-            Log.d("EXTRACT getEventId",":"+fingerAcquisitionObjects.
-                    getFingersAcequisitionObjectsRigthFinger()
-                    .getFingerSuccessfullResponse().getEventId());
-            Log.d("EXTRACT getFingerSide",":"+fingerAcquisitionObjects.
-                    getFingersAcequisitionObjectsRigthFinger()
-                    .getFingerSuccessfullResponse().getFingerSide());
-            Log.d("EXTRACT getAcquired",":"+fingerAcquisitionObjects.
-                    getFingersAcequisitionObjectsRigthFinger().
-                    getFingerSuccessfullResponse().getAcquired());
-
-
             ret.put("eventIdLeft",fingerAcquisitionObjects.
                     getFingersAcequisitionObjectsLeftFinger().getFingerSuccessfullResponse().getEventId());
             ret.put("acquireLeft",fingerAcquisitionObjects.
                    getFingersAcequisitionObjectsLeftFinger().getFingerSuccessfullResponse().getAcquired());
-
-
-
             ret.put("eventIdRight",fingerAcquisitionObjects.
                     getFingersAcequisitionObjectsRigthFinger().getFingerSuccessfullResponse().getEventId());
             ret.put("acquireRight",fingerAcquisitionObjects.
                     getFingersAcequisitionObjectsRigthFinger().getFingerSuccessfullResponse().getAcquired());
 
-
-             call.resolve(ret);
+            Gson gson = new Gson();
+            String jsonResult=gson.toJson(fingerAcquisitionObjects);
+            Log.d("Debug result",jsonResult);
+            call.resolve(ret);
 
 
         }else{
