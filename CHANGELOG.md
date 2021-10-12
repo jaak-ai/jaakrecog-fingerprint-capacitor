@@ -1,3 +1,10 @@
+# [1.0.0-dev.20](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.19...v1.0.0-dev.20) (2021-10-12)
+
+
+### Bug Fixes
+
+* **debug:** logging debug data ([ce95480](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/commit/ce954806468c921be27692dfda0dfed2eddfa689))
+
 # [1.0.0-dev.19](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.18...v1.0.0-dev.19) (2021-10-08)
 
 
