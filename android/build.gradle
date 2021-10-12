@@ -67,6 +67,7 @@ dependencies {
     def arch_version = '2.2.0-alpha01'
     implementation "androidx.lifecycle:lifecycle-extensions:$arch_version"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$arch_version"
+
     implementation group: 'com.jaakit.fingeracquisition', name: 'finger-capture', version: '1.0.14-SNAPSHOT'
     implementation group: 'com.jaakrecog.fingerprint', name: 'finger-analysis', version: '1.0.5-SNAPSHOT'
     implementation 'io.sentry:sentry-android:5.2.1'
