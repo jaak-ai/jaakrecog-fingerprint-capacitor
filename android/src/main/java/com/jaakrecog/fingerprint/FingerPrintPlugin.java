@@ -58,10 +58,9 @@ public class FingerPrintPlugin extends Plugin {
         if (call == null) {
             return;
         }
-
+        JSObject ret = new JSObject();
         if ((result.getResultCode()== RESULT_OK)) {
-            JSObject ret = new JSObject();
-             FingersAcquisitionObjects fingerAcquisitionObjects=
+            FingersAcquisitionObjects fingerAcquisitionObjects=
                     (FingersAcquisitionObjects) result.getData().
                             getSerializableExtra("fingersAcequisitionObjects");
 
@@ -73,24 +72,17 @@ public class FingerPrintPlugin extends Plugin {
                     getFingersAcequisitionObjectsRigthFinger().getFingerSuccessfullResponse().getEventId());
             ret.put("acquireRight",fingerAcquisitionObjects.
                     getFingersAcequisitionObjectsRigthFinger().getFingerSuccessfullResponse().getAcquired());
-
             Gson gson = new Gson();
             String jsonResult=gson.toJson(fingerAcquisitionObjects);
             Log.d("Debug result",jsonResult);
-            call.resolve(ret);
-
 
         }else{
-            JSObject ret = new JSObject();
             ret.put("eventIdLeft",result.getData().getStringExtra("eventIdLeft"));
             ret.put("acquireLeft",false);
             ret.put("eventIdRigth", result.getData().getStringExtra("eventIdRigth"));
             ret.put("acquireRigth", false);
-
-            call.resolve(ret);
-
-
         }
+        call.resolve(ret);
 
 
     }
