@@ -1,3 +1,10 @@
+# [1.0.0-dev.22](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.21...v1.0.0-dev.22) (2021-10-25)
+
+
+### Bug Fixes
+
+* removing spaces to take change and update nue version ([1135c70](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/commit/1135c7081441e4ab7386c038f8657fd47c29c234))
+
 # [1.0.0-dev.21](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.20...v1.0.0-dev.21) (2021-10-25)
 
 
