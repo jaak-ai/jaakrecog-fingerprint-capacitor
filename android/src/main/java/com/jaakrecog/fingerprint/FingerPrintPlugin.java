@@ -63,7 +63,6 @@ public class FingerPrintPlugin extends Plugin {
             FingersAcquisitionObjects fingerAcquisitionObjects=
                     (FingersAcquisitionObjects) result.getData().
                             getSerializableExtra("fingersAcequisitionObjects");
-
             ret.put("eventIdLeft",fingerAcquisitionObjects.
                     getFingersAcequisitionObjectsLeftFinger().getFingerSuccessfullResponse().getEventId());
             ret.put("acquireLeft",fingerAcquisitionObjects.
