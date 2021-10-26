@@ -1,3 +1,10 @@
+# [1.0.0-dev.24](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.23...v1.0.0-dev.24) (2021-10-26)
+
+
+### Features
+
+* **threshold:** threshold to 0.80F to version 1.0.17-SNAPSHOT ([0ff700f](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/commit/0ff700f105f85d6dd00718703a0b3fd80e16e902))
+
 # [1.0.0-dev.23](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.22...v1.0.0-dev.23) (2021-10-26)
 
 
