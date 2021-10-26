@@ -82,8 +82,6 @@ public class FingerPrintPlugin extends Plugin {
             ret.put("acquireRigth", false);
         }
         call.resolve(ret);
-
-
     }
 
 
