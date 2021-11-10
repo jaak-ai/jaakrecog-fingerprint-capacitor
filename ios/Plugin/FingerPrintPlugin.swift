@@ -18,15 +18,17 @@ public class FingerPrintPlugin: CAPPlugin {
 //        ])
 //    }
     
-    @objc func callFingerAcequisition(_ call: CAPPluginCall) {
+    @objc func callFingerAcquisition(_ call: CAPPluginCall) {
         self.callbackId = call.callbackId
         self.bridge?.saveCall(call)
         
-        let apiKey = call.getString("value") ?? ""
+        let apiKey = call.getString("accessToken") ?? ""
         
         // TODO: Not sure why apiKey is empty here.
         print("Api Key: \(apiKey)")
-        
+        if let environment = call.getBool("is_production") {
+            print("Environment: \(environment ? "production" : "development")")
+        }
         authService.validateCredentials(apiKey: apiKey) { result in
             switch result {
             case .failure(_):
@@ -55,7 +57,12 @@ public class FingerPrintPlugin: CAPPlugin {
 }
 
 extension FingerPrintPlugin: FAMainViewControllerDelegate {
-    public func faMainViewControllerDidEndWithResult(results: [FAHand : String]) {
+    
+	public func faMainViewControllerDidEndWithResult(results: [FAResult]) {
+        	print("results: \(results)")
+    	}
+
+	public func faMainViewControllerDidEndWithResult(results: [FAHand : String]) {
         // Results has the wsq in each value, instead of a path to a .wsq file
         // TODO: Change this to have a local path instead of the actual .wsq
         
