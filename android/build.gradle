@@ -18,7 +18,7 @@ buildscript {
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion project.hasProperty('compileSdkVersion') ? rootProject.ext.compileSdkVersion : 30
+    compileSdkVersion project.hasProperty('compileSdkVersion') ? rootProject.ext.compileSdkVersion : 31
     defaultConfig {
         minSdkVersion project.hasProperty('minSdkVersion') ? rootProject.ext.minSdkVersion : 21
         targetSdkVersion project.hasProperty('targetSdkVersion') ? rootProject.ext.targetSdkVersion : 30
@@ -47,7 +47,6 @@ allprojects {
         maven {
             url "https://devtools.jaakrecog.com/repository/com.jaakit.fingeracquisition/"
         }
-
     }
 }
 
@@ -68,8 +67,8 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-extensions:$arch_version"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$arch_version"
     implementation 'com.google.code.gson:gson:2.8.6'
-    implementation group: 'com.jaakit.fingeracquisition', name: 'finger-capture', version: '1.0.17-SNAPSHOT'
-    implementation group: 'com.jaakrecog.fingerprint', name: 'finger-analysis', version: '1.0.5-SNAPSHOT'
+    implementation("com.jaakrecog.fingerprint:finger-analysis:1.0.6-20211129.190905-1")
+    implementation("com.jaakit.fingeracquisition:finger-capture:1.0.19-20211129.212045-1")
 
     implementation 'io.sentry:sentry-android:5.2.1'
 

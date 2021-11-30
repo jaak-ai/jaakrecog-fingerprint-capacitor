@@ -45,7 +45,6 @@ public class FingerPrintPlugin extends Plugin {
             callIntentActivity.putExtra("isProduction",dev);
             startActivityForResult(call,callIntentActivity,"captureFingersResult");
 
-
         }catch (Exception ex){
             Log.e("Exception",ex.getMessage());
             Sentry.captureException(ex);
