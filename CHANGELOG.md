@@ -1,3 +1,10 @@
+# [1.0.0-dev.25](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.24...v1.0.0-dev.25) (2021-11-30)
+
+
+### Features
+
+* **blur:** update library to increase blur threshold ([46b1218](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/commit/46b12188e3c6b52b74f16b78c3b3aca486148fc0))
+
 # [1.0.0-dev.24](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.23...v1.0.0-dev.24) (2021-10-26)
 
 
