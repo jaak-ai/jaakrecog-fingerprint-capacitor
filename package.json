@@ -1,6 +1,6 @@
 {
   "name": "jaakrecog-fingerprint",
-  "version": "1.0.0-dev.25",
+  "version": "1.0.0-dev.26",
   "description": "This plugin is for jaakrecog fingerprint",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
