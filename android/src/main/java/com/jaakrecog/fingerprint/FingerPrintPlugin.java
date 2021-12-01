@@ -78,6 +78,7 @@ public class FingerPrintPlugin extends Plugin {
             ret.put("eventIdRigth", result.getData().getStringExtra("eventIdRigth"));
             ret.put("acquireRigth", false);
         }
+
         call.resolve(ret);
     }
 
