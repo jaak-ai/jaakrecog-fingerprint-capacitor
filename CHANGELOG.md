@@ -1,3 +1,10 @@
+# [1.0.0-dev.27](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.26...v1.0.0-dev.27) (2021-12-01)
+
+
+### Features
+
+* **capture:** adding armaeb-v7 support ([be0835f](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/commit/be0835f352c2b53077069cc4b208df47dee976de))
+
 # [1.0.0-dev.26](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.25...v1.0.0-dev.26) (2021-12-01)
 
 
