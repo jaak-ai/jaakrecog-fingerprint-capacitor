@@ -1,3 +1,11 @@
+# [1.0.0-dev.28](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.27...v1.0.0-dev.28) (2021-12-02)
+
+
+### Bug Fixes
+
+* **config:** adding flags for bundle package ([7e58c27](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/commit/7e58c279e385ada10b78e2c71c12b51d938f2207))
+* **config:** adding flags for bundle package ([4d20212](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/commit/4d20212746b99590e6522ac05089d19677d99248))
+
 # [1.0.0-dev.27](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.26...v1.0.0-dev.27) (2021-12-01)
 
 
