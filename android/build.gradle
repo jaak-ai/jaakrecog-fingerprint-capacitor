@@ -39,6 +39,7 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
 }
 allprojects {
     repositories {
@@ -70,7 +71,7 @@ dependencies {
     //implementation("com.jaakrecog.fingerprint:finger-analysis:1.0.6-20211129.190905-1")
     //implementation("com.jaakit.fingeracquisition:finger-capture:1.0.21-20211201.161814-2")
     implementation("com.jaakrecog.fingerprint:finger-analysis:1.0.0-fullarm-20211201.221255-1")
-    implementation("com.jaakit.fingeracquisition:finger-capture:1.0.0-fullarm-20211201.224331-2")
+    implementation("com.jaakit.fingeracquisition:finger-capture:1.0.1-fullarm-20211202.165032-1")
 
     implementation 'io.sentry:sentry-android:5.2.1'
 
