@@ -71,6 +71,7 @@ public class FingerPrintPlugin extends Plugin {
                     getFingersAcequisitionObjectsRigthFinger().getFingerSuccessfullResponse().getAcquired());
             Gson gson = new Gson();
             String jsonResult=gson.toJson(fingerAcquisitionObjects);
+
          }else{
             ret.put("eventIdLeft",result.getData().getStringExtra("eventIdLeft"));
             ret.put("acquireLeft",false);
