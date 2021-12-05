@@ -1,3 +1,10 @@
+# [1.0.0-dev.29](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.28...v1.0.0-dev.29) (2021-12-05)
+
+
+### Bug Fixes
+
+* **config:** adding flags ndk ([f265a24](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/commit/f265a24bd1d360687885d22c88f2003cff38affb))
+
 # [1.0.0-dev.28](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.27...v1.0.0-dev.28) (2021-12-02)
 
 
