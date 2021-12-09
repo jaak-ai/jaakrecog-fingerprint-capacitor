@@ -1,3 +1,10 @@
+# [1.0.0-dev.30](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.29...v1.0.0-dev.30) (2021-12-09)
+
+
+### Features
+
+* **capture:** new capture mode horizontal finger ([9bdfd3f](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/commit/9bdfd3f150fb7de2e373a60a8033865aa46f9908))
+
 # [1.0.0-dev.29](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.28...v1.0.0-dev.29) (2021-12-05)
 
 
