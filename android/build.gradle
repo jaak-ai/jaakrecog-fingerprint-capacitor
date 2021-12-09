@@ -24,6 +24,7 @@ android {
         targetSdkVersion project.hasProperty('targetSdkVersion') ? rootProject.ext.targetSdkVersion : 30
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
         ndk {
             abiFilters "arm64-v8a", "armeabi-v7a"
         }
@@ -73,7 +74,7 @@ dependencies {
     //implementation("com.jaakrecog.fingerprint:finger-analysis:1.0.6-20211129.190905-1")
     //implementation("com.jaakit.fingeracquisition:finger-capture:1.0.21-20211201.161814-2")
     implementation("com.jaakrecog.fingerprint:finger-analysis:1.0.0-fullarm-20211201.221255-1")
-    implementation("com.jaakit.fingeracquisition:finger-capture:1.0.1-fullarm-20211203.184624-2")
+    implementation("com.jaakit.fingeracquisition:finger-capture:1.1.1-fullarm-20211208.235748-1")
 
     implementation 'io.sentry:sentry-android:5.2.1'
 
