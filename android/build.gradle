@@ -71,10 +71,8 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-extensions:$arch_version"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$arch_version"
     implementation 'com.google.code.gson:gson:2.8.6'
-    //implementation("com.jaakrecog.fingerprint:finger-analysis:1.0.6-20211129.190905-1")
-    //implementation("com.jaakit.fingeracquisition:finger-capture:1.0.21-20211201.161814-2")
     implementation("com.jaakrecog.fingerprint:finger-analysis:1.0.0-fullarm-20211201.221255-1")
-    implementation("com.jaakit.fingeracquisition:finger-capture:1.1.1-fullarm-20211208.235748-1")
+    implementation("com.jaakit.fingerscapture:finger-capture:1.0.15-fullarm-20211224.160716-1")
 
     implementation 'io.sentry:sentry-android:5.2.1'
 
