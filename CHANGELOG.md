@@ -1,3 +1,10 @@
+# [1.0.0-dev.31](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.30...v1.0.0-dev.31) (2021-12-27)
+
+
+### Features
+
+* **capture:** new ui and model implementation ([4980c23](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/commit/4980c234561a153cca9523e472758180f06d1c67))
+
 # [1.0.0-dev.30](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.29...v1.0.0-dev.30) (2021-12-09)
 
 
