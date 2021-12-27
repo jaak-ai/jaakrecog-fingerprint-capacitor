@@ -17,7 +17,7 @@ import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.ActivityCallback;
 import com.getcapacitor.annotation.CapacitorPlugin;
 import com.google.gson.Gson;
-import com.jaakit.fingeracquisition.finger_request.FingersAcquisitionObjects;
+import com.jaakit.fingerscapture.finger_request.FingersAcquisitionObjects;
 import com.jaakrecog.fingerprint.credentials.ValidateCredentialsImpl;
 
 import java.io.IOException;
