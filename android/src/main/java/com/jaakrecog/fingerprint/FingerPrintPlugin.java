@@ -39,7 +39,7 @@ public class FingerPrintPlugin extends Plugin {
             String jwToken=validateCredentials.validateCredentials(apiKey,dev);
             Intent callIntentActivity =
                     new Intent(getActivity(),
-                    Class.forName("com.jaakit.fingeracquisition.FingerActivity"));
+                    Class.forName("com.jaakit.fingerscapture.FingerActivity"));
             callIntentActivity.putExtra("jwtoken",jwToken);
             callIntentActivity.putExtra("isProduction",dev);
             startActivityForResult(call,callIntentActivity,"captureFingersResult");
