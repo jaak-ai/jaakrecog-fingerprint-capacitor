@@ -1,3 +1,10 @@
+# [1.0.0-dev.32](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.31...v1.0.0-dev.32) (2021-12-27)
+
+
+### Bug Fixes
+
+* **dependencies:** fix lastest version after gradle update ([274d39c](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/commit/274d39ce760ef2b3c8e9620587838df486cd0d77))
+
 # [1.0.0-dev.31](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.30...v1.0.0-dev.31) (2021-12-27)
 
 
