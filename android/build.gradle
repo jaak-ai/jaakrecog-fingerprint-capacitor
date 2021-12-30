@@ -10,7 +10,7 @@ buildscript {
 
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.2.1'
+        classpath 'com.android.tools.build:gradle:4.2.2'
     }
 }
 
@@ -74,8 +74,8 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.4.0"
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0-RC")
     implementation 'com.google.code.gson:gson:2.8.6'
-    implementation("com.jaakrecog.fingerprint:finger-analysis:1.0.0-fullarm-20211201.221255-1")
-    implementation("com.jaakit.fingerscapture:finger-capture:1.0.15-fullarm-20211224.160716-1")
+    implementation("com.jaakrecog.fingerprint:finger-analysis:1.0.4-fullarm-20211229.204350-5")
+    implementation("com.jaakit.fingerscapture:finger-capture:1.0.18-fullarm-20211230.001816-1")
     implementation 'io.sentry:sentry-android:5.2.1'
 
 }
