@@ -1,3 +1,10 @@
+# [1.0.0-dev.33](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.32...v1.0.0-dev.33) (2021-12-30)
+
+
+### Bug Fixes
+
+* **architecture:** fix architecture erros ([ae39584](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/commit/ae39584801523dbf2e9858b9bdcac79e96b27fd1))
+
 # [1.0.0-dev.32](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.31...v1.0.0-dev.32) (2021-12-27)
 
 
