@@ -1,3 +1,10 @@
+# [1.0.0-dev.34](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.33...v1.0.0-dev.34) (2022-01-18)
+
+
+### Features
+
+* **blur model:** adding new blurring detector model ([0552e5e](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/commit/0552e5e9dd52eb16d3ccb195ed1ea99fe2e82b3f))
+
 # [1.0.0-dev.33](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.32...v1.0.0-dev.33) (2021-12-30)
 
 
