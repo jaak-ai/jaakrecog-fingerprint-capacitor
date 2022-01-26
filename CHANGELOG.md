@@ -1,3 +1,10 @@
+# [1.0.0-dev.35](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.34...v1.0.0-dev.35) (2022-01-26)
+
+
+### Features
+
+* **blur model:** update finger-analyisys and finger-capture v2.0.1 ([e090cd1](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/commit/e090cd13b0bc92f1986cab25ba85e2f80053b09c))
+
 # [1.0.0-dev.34](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.33...v1.0.0-dev.34) (2022-01-18)
 
 
