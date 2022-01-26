@@ -74,9 +74,9 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.4.0"
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0-RC")
     implementation 'com.google.code.gson:gson:2.8.6'
-    implementation("com.jaakrecog.fingerprint:finger-analysis:2.0.0-fullarm-20220118.200818-1")
-    implementation("com.jaakit.fingerscapture:finger-capture:2.0.0-fullarm-20220118.205813-1")
+    implementation("com.jaakrecog.fingerprint:finger-analysis:2.0.1-fullarm-20220126.173046-1")
+    implementation("com.jaakit.fingerscapture:finger-capture:2.0.1-fullarm-20220126.230746-1")
 
-    implementation 'io.sentry:sentry-android:5.2.1'
+    implementation 'io.sentry:sentry-android:5.5.2'
 
 }
