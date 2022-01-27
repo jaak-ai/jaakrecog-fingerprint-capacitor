@@ -1,3 +1,11 @@
+# [1.0.0-dev.36](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.35...v1.0.0-dev.36) (2022-01-27)
+
+
+### Features
+
+* **blur model:** comment code in FingerPrintPlugin to force PR ([d44e2ad](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/commit/d44e2adfee73cfe7b5a6fdeefa33c966dd6c7856))
+* **blur model:** update finger-analyisys and finger-capture v2.0.1 ([65b6285](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/commit/65b6285591f8d237a1057f9c8434c481644259bb))
+
 # [1.0.0-dev.35](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.34...v1.0.0-dev.35) (2022-01-26)
 
 
