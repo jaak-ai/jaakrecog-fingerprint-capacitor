@@ -1,3 +1,11 @@
+# [1.0.0-dev.38](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.37...v1.0.0-dev.38) (2022-02-01)
+
+
+### Features
+
+* **logging activity:** removing local classes and call library methods ([8eb6ec1](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/commit/8eb6ec1270949ff2c32694ac8486f7ad3ac5c8c4))
+* **logging activity:** removing local classes and call library methods ([60de8c4](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/commit/60de8c4f24e0b63c63e5fc566c5f446b197c4cb8))
+
 # [1.0.0-dev.37](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.36...v1.0.0-dev.37) (2022-02-01)
 
 
