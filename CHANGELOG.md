@@ -1,3 +1,10 @@
+# [1.0.0-dev.37](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.36...v1.0.0-dev.37) (2022-02-01)
+
+
+### Features
+
+* **logging activity:** trace activity whit sentry ([acdb595](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/commit/acdb5953cc53e22a3dba665865331d37f03709e4))
+
 # [1.0.0-dev.36](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.35...v1.0.0-dev.36) (2022-01-27)
 
 
