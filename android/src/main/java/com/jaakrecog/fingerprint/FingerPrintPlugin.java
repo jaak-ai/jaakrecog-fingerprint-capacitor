@@ -19,6 +19,7 @@ import com.getcapacitor.annotation.CapacitorPlugin;
 import com.google.gson.Gson;
 import com.jaakit.fingerscapture.model.FingersAcquisitionObjects;
 import com.jaakrecog.fingerprint.credentials.ValidateCredentialsImpl;
+import com.jaakrecog.fingerprint.tools.LogInformationData;
 
 import java.io.IOException;
 
@@ -28,13 +29,14 @@ import io.sentry.Sentry;
 @CapacitorPlugin(name = "FingerPrint")
 public class FingerPrintPlugin extends Plugin {
     Context context;
+    LogInformationData log;
     private ValidateCredentialsImpl validateCredentials;
      @PluginMethod
     public void callFingerAcquisition(PluginCall call) {
         try {
             String apiKey = call.getString("accessToken");
             Boolean dev =   call.getBoolean("is_production");
-
+            log = new LogInformationData();
             validateCredentials= new ValidateCredentialsImpl(context);
             String jwToken=validateCredentials.validateCredentials(apiKey,dev);
             Intent callIntentActivity =
@@ -68,9 +70,9 @@ public class FingerPrintPlugin extends Plugin {
                     getFingersAcequisitionObjectsRigthFinger().getFingerSuccessfullResponse().getEventId());
             ret.put("acquireRight",fingerAcquisitionObjects.
                     getFingersAcequisitionObjectsRigthFinger().getFingerSuccessfullResponse().getAcquired());
-             // Gson gson = new Gson();
-            //String jsonResult=gson.toJson(fingerAcquisitionObjects);
-
+            Gson gson = new Gson();
+            String jsonResult=gson.toJson(fingerAcquisitionObjects);
+            log.printoServer("Plugin",jsonResult);
          }else{
             ret.put("eventIdLeft",result.getData().getStringExtra("eventIdLeft"));
             ret.put("acquireLeft",false);
