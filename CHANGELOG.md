@@ -1,3 +1,10 @@
+# [1.0.0-dev.39](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.38...v1.0.0-dev.39) (2022-02-01)
+
+
+### Features
+
+* **logging activity:** call sentry capture message ([58c79d4](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/commit/58c79d4d0f8da0895c594aa87804fabf4c21f0ee))
+
 # [1.0.0-dev.38](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.37...v1.0.0-dev.38) (2022-02-01)
 
 
