@@ -18,8 +18,8 @@ import com.getcapacitor.annotation.ActivityCallback;
 import com.getcapacitor.annotation.CapacitorPlugin;
 import com.google.gson.Gson;
 import com.jaakit.fingerscapture.model.FingersAcquisitionObjects;
+import com.jaakit.fingerscapture.tools.LogInformationData;
 import com.jaakrecog.fingerprint.credentials.ValidateCredentialsImpl;
-import com.jaakrecog.fingerprint.tools.LogInformationData;
 
 import java.io.IOException;
 
@@ -29,7 +29,7 @@ import io.sentry.Sentry;
 @CapacitorPlugin(name = "FingerPrint")
 public class FingerPrintPlugin extends Plugin {
     Context context;
-    LogInformationData log;
+    private LogInformationData log;
     private ValidateCredentialsImpl validateCredentials;
      @PluginMethod
     public void callFingerAcquisition(PluginCall call) {
