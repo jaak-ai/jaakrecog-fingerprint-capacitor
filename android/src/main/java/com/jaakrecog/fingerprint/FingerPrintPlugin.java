@@ -37,6 +37,7 @@ public class FingerPrintPlugin extends Plugin {
             String apiKey = call.getString("accessToken");
             Boolean dev =   call.getBoolean("is_production");
             log = new LogInformationData();
+            log.printoServer("Plugin","callFingerAcquisition");
             validateCredentials= new ValidateCredentialsImpl(context);
             String jwToken=validateCredentials.validateCredentials(apiKey,dev);
             Intent callIntentActivity =
