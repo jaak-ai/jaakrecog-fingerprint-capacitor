@@ -1,3 +1,10 @@
+# [1.0.0-dev.40](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.39...v1.0.0-dev.40) (2022-03-08)
+
+
+### Bug Fixes
+
+* **library:** homologate versions whit upgraded native implementation ([3530e19](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/commit/3530e1935625bb2605e9ca2e55784071654ac4ca))
+
 # [1.0.0-dev.39](https://github.com/jaak-it/jaakrecog-fingerprint-capacitor/compare/v1.0.0-dev.38...v1.0.0-dev.39) (2022-02-01)
 
 
