@@ -40,14 +40,12 @@ public class FingerPrintPlugin extends Plugin {
             Intent callIntentActivity =
                     new Intent(getActivity(),
                     Class.forName("com.jaakit.fingerscapture.FingerActivity"));
-            callIntentActivity.putExtra("jwtoken",jwToken);
+            callIntentActivity.putExtra("jwtToken",jwToken);
             callIntentActivity.putExtra("isProduction",dev);
             startActivityForResult(call,callIntentActivity,"captureFingersResult");
         }catch (Exception ex){
-            Log.e("Exception",ex.getMessage());
             Sentry.captureException(ex);
-            call.reject("Error acquiring finger", ex);
-        }
+         }
      }
 
     @ActivityCallback
@@ -56,30 +54,10 @@ public class FingerPrintPlugin extends Plugin {
             return;
         }
         JSObject ret = new JSObject();
-        if ((result.getResultCode()== RESULT_OK)) {
-            FingersAcquisitionObjects fingerAcquisitionObjects=
-                    (FingersAcquisitionObjects) result.getData().
-                            getSerializableExtra("fingersAcequisitionObjects");
-            ret.put("eventIdLeft",fingerAcquisitionObjects.
-                    getFingersAcequisitionObjectsLeftFinger().getFingerSuccessfullResponse().getEventId());
-            ret.put("acquireLeft",fingerAcquisitionObjects.
-                   getFingersAcequisitionObjectsLeftFinger().getFingerSuccessfullResponse().getAcquired());
-            ret.put("eventIdRight",fingerAcquisitionObjects.
-                    getFingersAcequisitionObjectsRigthFinger().getFingerSuccessfullResponse().getEventId());
-            ret.put("acquireRight",fingerAcquisitionObjects.
-                    getFingersAcequisitionObjectsRigthFinger().getFingerSuccessfullResponse().getAcquired());
-            Gson gson = new Gson();
-            String jsonResult=gson.toJson(fingerAcquisitionObjects);
-            Sentry.captureMessage("Plugin: "+jsonResult);
-
-
-         }else{
-            ret.put("eventIdLeft",result.getData().getStringExtra("eventIdLeft"));
-            ret.put("acquireLeft",false);
-            ret.put("eventIdRigth", result.getData().getStringExtra("eventIdRigth"));
-            ret.put("acquireRigth", false);
-        }
-
+        ret.put("eventIdLeft",result.getData().getStringExtra("eventIdLeft"));
+        ret.put("acquireLeft",false);
+        ret.put("eventIdRigth", result.getData().getStringExtra("eventIdRigth"));
+        ret.put("acquireRigth", false);
         call.resolve(ret);
     }
 
